@@ -11,7 +11,9 @@
 <body>
     <h1>Create a New Blog</h1>
     <form th:action="@{/create}" method="post">
+		
         <label for="name">Blog Name:</label>
+        <input type="text" id="id" name="id" th:value="${create.id}" required hidden>
         <input type="text" id="name" name="name" th:value="${create.name}" required>
         <br><br>
         <label for="body">Blog Body:</label>
