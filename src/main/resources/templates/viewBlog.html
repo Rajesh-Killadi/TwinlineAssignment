@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Blog</title>
+    <style>
+		body{
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+    <h1 th:text="${blog.name}">Blog Title</h1>
+    <p th:text="${blog.body}">Blog Body</p>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    
+    <style>
+		.dashboard{
+			text-align: center;
+		}
+		table {
+		font-size: large;
+        margin: 10px auto;
+        border-collapse: collapse;
+        width: 40%; 
+    }
+	</style>
+</head>
+<body>
+    <div class="dashboard">
+		<h1>Welcome to the Dashboard</h1>
+    <a href="/create" style="margin-right: 20px;">Create Blog</a>
+<a href="/report" style="margin-right: 20px;">Report</a>
+<a href="/logout">Log Out</a>
+    
+    <br>
+    <h2>Your Blogs</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Blog Name</th>
+<!--            <th>Blog Body</th>-->
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="blog : ${blogsList}">
+            <td th:text="${blog.name}"></td>
+<!--            <td th:text="${blog.body}"></td>-->
+            <td>
+				<a th:href="@{'/blog/' + ${blog.id}}" style="font-size: medium;">View</a> |
+                <a th:href="@{'/edit/' + ${blog.id}}" style="font-size: medium;">Edit</a> |
+                <a th:href="@{'/delete/' + ${blog.id}}" style="font-size: medium; color: red;">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+	</div>
+</body>
+</html>

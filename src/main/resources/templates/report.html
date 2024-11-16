@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Report</title>
+	<style>
+		div {
+			text-align: center;
+		}
+		ul {
+			list-style-position: inside;
+			padding: 0;
+			display: inline-block; 
+			text-align: left;
+		}
+
+		li {
+			font-size: larger;
+		}
+	</style>
+</head>
+
+<body>
+	<div>
+		<h1 style="text-align: center;">Top 5 Frequent Words in Your Blogs</h1>
+	<ul>
+		<li th:each="word : ${frequentWords}">
+			<span th:text="${word}"></span>
+		</li>
+	</ul><br>
+	<a href="/dashboard">Back to Dashboard</a>
+	</div>
+</body>
+
+</html>
